@@ -20,5 +20,5 @@ And here is a bullet list:
 
 <div style="margin: 10px; background-color: yellow; border: 1px solid red; ">This some is text styled with inline CSS.</div>
 
-== Heading 2 ==
+## Heading 2 
 And this is the end.
