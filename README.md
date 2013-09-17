@@ -18,4 +18,4 @@ And here is a bullet list:
 3. blah
 
 
-<div style="margin: 10px; background-color: #eee; ">This some is text styled with inline CSS.</div>
+<div style="margin: 10px; background-color: yellow; border: 1px solid red; ">This some is text styled with inline CSS.</div>
