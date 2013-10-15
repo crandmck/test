@@ -30,7 +30,7 @@ solution to handle asynchronous actions in node.js. Other patterns are promises 
 This is a test:
 
 1. asynchronous actions in node.js. Other patterns are promises and events.  
-dsfasdfsadf xxx
+dsfasdfsadf xxx.
 asdfasdfasdff asdfasdfasdfsadf asdfasdfasdfadsf 
 adsfasdfadsfasdf aasdfasdf adsf  xxx
 asdfsadfsadfadsf
