@@ -34,8 +34,7 @@ dsfasdfsadf xxx.
 asdfasdfasdff asdfasdfasdfsadf asdfasdfasdfadsf 
 adsfasdfadsfasdf aasdfasdf adsf  xxx
 asdfsadfsadfadsf
-1. asynchronous actions in node.js. Other patterns are promises and events.  
-dsfasdfsadf xxx
+1. asynchronous actions in node.js. Other patterns are promises and events.  dsfasdfsadf xxx
 asdfasdfasdff asdfasdfasdfsadf asdfasdfasdfadsf 
 adsfasdfadsfasdf aasdfasdf adsf  xxx
 asdfsadfsadfadsf
