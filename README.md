@@ -11,8 +11,8 @@ tristique pulvinar. Maecenas non lorem nisl.
  
 This is a test:
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  asfads asdfasdf. aadsfasdf.
-Sed velit odio, laoreet id orci non, cursus varius tellus. 
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Spaces at end of line.  
+Sed velit odio, laoreet id orci non, cursus varius tellus.  
 Aliquam cursus eros aliquet, lobortis mi ac, aliquam justo. 
 Proin hendrerit lacus id libero vestibulum, id pulvinar nulla rutrum. 
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
