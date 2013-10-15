@@ -15,11 +15,14 @@ And here is a bullet list:
 
 1. blah See how the argument to server.start is an anonymous JavaScript function? That's a callback. When you need to 
 act on an asynchronous event that will happen at some time in the future, callbacks are a common solution to handle 
-asynchronous actions in node.js. Other patterns are promises and events.
-2. blah See how the argument to server.start is an anonymous JavaScript function? That's a callback. 
+asynchronous actions in node.js. Other patterns are promises and events.  
+dsfasdfsadf xxx
+asdfasdfasdff asdfasdfasdfsadf asdfasdfasdfadsf adsfasdfadsfasdf aasdfasdf adsf  xxx
+asdfsadfsadfadsf
+1. blah See how the argument to server.start is an anonymous JavaScript function? That's a callback. 
 When you need to act on an asynchronous event that will happen at some time in the future, callbacks are a common
 solution to handle asynchronous actions in node.js. Other patterns are promises and events.
-3. blah See how the argument to server.start is an anonymous JavaScript function? That's a callback. 
+1. blah See how the argument to server.start is an anonymous JavaScript function? That's a callback. 
 When you need to act on an asynchronous event that will happen at some time in the future, callbacks are a common 
 solution to handle asynchronous actions in node.js. Other patterns are promises and events.
 
