@@ -31,9 +31,9 @@ var User = loopback.createModel('user', {
 });
 ```
 
-#### Validation (expiremental)
+#### Validation
 
-##### Model.validatesFormatOf(property, options)
+##### validatesFormatOf(property, options)
 
 Require a model to include a property that matches the given format.
 
@@ -41,7 +41,7 @@ Require a model to include a property that matches the given format.
 User.validatesFormat('name', {with: /\w+/});
 ```
 
-##### Model.validatesPresenceOf(properties...)
+##### validatesPresenceOf(properties...)
 
 Require a model to include a property to be considered valid.
 
@@ -49,7 +49,7 @@ Require a model to include a property to be considered valid.
 User.validatesPresenceOf('first', 'last', 'age');
 ```
 
-##### Model.validatesLengthOf(property, options)
+##### validatesLengthOf(property, options)
 
 Require a property length to be within a specified range.
 
@@ -57,7 +57,7 @@ Require a property length to be within a specified range.
 User.validatesLengthOf('password', {min: 5, message: {min: 'Password is too short'}});
 ```
 
-##### Model.validatesInclusionOf(property, options)
+##### validatesInclusionOf(property, options)
 
 Require a value for `property` to be in the specified array.
 
@@ -65,7 +65,7 @@ Require a value for `property` to be in the specified array.
 User.validatesInclusionOf('gender', {in: ['male', 'female']});
 ```
 
-##### Model.validatesExclusionOf(property, options)
+##### validatesExclusionOf(property, options)
 
 Require a value for `property` to not exist in the specified array.
 
@@ -73,7 +73,7 @@ Require a value for `property` to not exist in the specified array.
 User.validatesExclusionOf('domain', {in: ['www', 'billing', 'admin']});
 ```
 
-##### Model.validatesNumericalityOf(property, options)
+##### validatesNumericalityOf(property, options)
 
 Require a value for `property` to be a specific type of `Number`.
 
@@ -81,7 +81,7 @@ Require a value for `property` to be a specific type of `Number`.
 User.validatesNumericalityOf('age', {int: true});
 ```
 
-##### Model.validatesUniquenessOf(property, options)
+##### validatesUniquenessOf(property, options)
 
 Ensure the value for `property` is unique in the collection of models.
 
