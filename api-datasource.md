@@ -164,7 +164,7 @@ oracle.disableRemote('destroyAll');
  - disabling the remoting for a method only affects client access (it will still be available from server models)
  - data sources must enable / disable operations before attaching or creating models
 
-#### operations()
+### operations()
 
 List the enabled and disabled operations.
 
