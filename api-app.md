@@ -1,4 +1,4 @@
-### App
+## App
 
 Create a Loopback application.
 
@@ -19,7 +19,7 @@ app.listen(3000);
 > - see [express docs](http://expressjs.com/api.html) for details
 > - supports [express / connect middleware](http://expressjs.com/api.html#middleware) 
 
-#### app.model(Model)
+### app.model(Model)
 
 Expose a `Model` to remote clients.
 
@@ -34,7 +34,7 @@ app.use(loopback.rest());
     
 > **Note** - this will expose all [shared methods](#shared-methods) on the model.
     
-#### app.models()
+### app.models()
 
 Get the app's exposed models.
 
@@ -46,7 +46,7 @@ models.forEach(function (Model) {
 });
 ```
     
-#### app.docs(options)
+### app.docs(options)
 
 Enable swagger REST api documentation.
 
@@ -63,7 +63,7 @@ app.docs({basePath: 'http://localhost:3000'});
 
 Run your app then navigate to [the api explorer](http://petstore.swagger.wordnik.com/). Enter your API basepath to view your generated docs.
 
-#### app.use( router )
+### app.use( router )
 
 Expose models over specified router.
 For example, to expose models over REST using the `loopback.rest` router:
