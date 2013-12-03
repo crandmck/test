@@ -50,7 +50,7 @@ The following table describes filter types.
 <p>Format:</p>
 <ul>
 <li><code>posts</code>: Load posts</li>
-<li><code>[posts, passports']</code>: Load posts and passports.</li>
+<li><code>[posts, passports]</code>: Load posts and passports.</li>
 <li><code>{owner: posts}</code>: Load owner and owner's posts.</li>
 <li><code>{owner: [posts, passports]}</code>: Load owner, owner's posts, and owner's passports.</li>
 <li><code>{owner: [{posts: images}, passports]}</code>: Load owner, owner's posts, owner's posts' images, and owner's passports.</li>
