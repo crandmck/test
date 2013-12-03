@@ -51,7 +51,7 @@ The following table describes filter types.
 <ul>
 <li><code>posts</code>: Load posts</li>
 <li><code>[posts, passports']</code>: Load posts and passports.</li>
-<li>{owner: posts}</code>: Load owner and owner's posts.</li>
+<li><code>{owner: posts}</code>: Load owner and owner's posts.</li>
 <li><code>{owner: [posts, passports]}</code>: Load owner, owner's posts, and owner's passports.</li>
 <li><code>{owner: [{posts: images}, passports]}</code>: Load owner, owner's posts, owner's posts' images, and owner's passports.</li>
 </ul>
@@ -78,9 +78,9 @@ The following table describes filter types.
 <td>The included/excluded fields:
 <ul>
 <li>
-[<code>foo</code>] or <code>'foo'</code> - include only the foo property.</li>
+<code>[foo]</code> or <code>foo</code> - include only the foo property.</li>
 <li>
-[<code>foo</code>, <code>bar</code>] - include the foo and bar properties</li>
+<code>[foo, bar]</code> - include the foo and bar properties</li>
 <li>
 <code>{foo: true}</code> - include only foo</li>
 <li>
