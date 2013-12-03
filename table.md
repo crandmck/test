@@ -1,4 +1,3 @@
-
 ##find
 
 Find all instances of the model matched by filter from the data source.
@@ -16,22 +15,15 @@ Pass the arguments as the value of the `find` HTTP query parameter, as follows
 where *filterType1*, *filterType2*, and so on, are the filter types, and *val1*, *val2* are the corresponding
 values, as described in the following table.
 
-Filter types are: where, order, fields, skip, and limit.
+The following table describes filter types.
 
 | Filter type  | Type | Description |
 | ------------- | ------------- | ---------------|
-| where   | Object   | Search criteria. Format: `{key: val}` or `{key: {op: val}}` 
-Operations: |
-
+| where   | Object   | Search criteria. Format: `{key: val}` or `{key: {op: val}}`  Operations: |
 | include    | String, Object, or Array   | Allows you to load relations of several objects and optimize numbers of requests. |
-
-| order |  `String` The sorting order. Format: 'key1 ASC, key2 DESC' where ASC specifies ascending and DESC 
-specifies descending order. |
-
+| order |  String | Sort order.  Format: 'key1 ASC, key2 DESC' where ASC specifies ascending and DESC specifies descending order. |
 |limit| Number | Maximum number of instances to return. |
-
-|skip (offset) | Number | Skip the number of instances.  Use offset as alternative. |
-
+|skip (offset) | Number | Skip specified number of instances.  Use offset as alternative. |
 |fields| Object, Array, or String |  The included/excluded fields:
 
 
