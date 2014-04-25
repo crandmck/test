@@ -2,11 +2,11 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [Disclaimer](#disclaimer)
 - [Overview](#overview)
+  - [Disclaimer](#disclaimer)
 - [Using zones](#using-zones)
-    - [Creating a zone](#creating-a-zone)
-    - [The end of a zone](#the-end-of-a-zone)
+  - [Creating a zone](#creating-a-zone)
+  - [Ending a zone](#ending-a-zone)
   - [Co-style generators](#co-style-generators)
     - [Zone vs try...catch](#zone-vs-trycatch)
   - [Exiting a zone](#exiting-a-zone)
@@ -60,8 +60,7 @@
 
 # Overview
 
-The StrongLoop Zone library addresses several problems that make it hard to
-reason about asynchronous control flow in Node:
+The StrongLoop Zone library addresses several issues in Node application development:
 
   * Stack traces are useless when an asynchronous function fails.
 
@@ -74,16 +73,16 @@ reason about asynchronous control flow in Node:
     - Not throw an exception synchronously and also call the callback function.
     - Not call the callback function synchronously.
 
-  * It is difficult to handle errors that are raised asynchronously.
+  * It is difficult to handle errors raised asynchronously.
     Typically Node will crash. If the user ignores the error, the application may leak resources.
     Zones make it easy to handle errors and avoid resource leaks.
 
-  * Sometimes there is a need to associate user data to an asynchronous flow.
-    There is currently no way to do this.
+  * Sometimes you need to associate user data to an asynchronous flow.
+    There is currently no way to do this.  
 
 ## Disclaimer
 
-The intended audience of this README is developers interested
+This README is intended for developers interested
 in the rationale and internals of the zone library. It's rough but it specifies what we're building.
 It isn't particularly suited for end users at this point.
 
@@ -129,7 +128,7 @@ new Zone(function MyZone() {
 The zone constructor function is called synchronously.
 Of course zones can also be nested.
 
-## The end of a zone
+## Ending a zone
 
 Zones are like asynchronous functions. From the outside perspective,
 they can return a single value or "throw" a single error. There are a
@@ -168,7 +167,7 @@ new zone.Zone(function MyZone() {
 });
 ```
 
-A zone can be used as a promise too:
+You can use a zone can as a promise too:
 
 ```js
 new Zone(function MyZone() {
@@ -247,7 +246,7 @@ new Zone(function*() {
 
 There are a few ways to explicitly exit a zone:
 
-* `zone.return(value)` sets the return value of the zone and starts cleanup
+* `zone.return(value)` sets the return value of the zone and starts cleanup.
 * `zone.throw(error)` sets the zone to failed state and starts cleanup. `zone.throw` itself does not throw, so statements after it will run.
 * `throw error` uses normal exception handling. If the exception is not caught before it reaches the binding layer, the active zone is set to failed state and starts cleanup.
 * `zone.complete(err, value)` is a zone-bound function that may be passed to subordinates to let them exit the zone.
@@ -275,7 +274,7 @@ new Zone(function StatZone() {
 
 ## Sharing resources between zones
 
-Within a zone you may use resources that are "owned" by any ancestor zones. So this is okay:
+Within a zone you may use resources that are "owned" by ancestor zones. So this is okay:
 
 ```js
 var server = http.createServer().listen(1234);
@@ -303,14 +302,14 @@ new Zone(function SomeZone() {
 server.on('connection', function() { ... });
 ```
 
-Currently we don't always enforce these rules, but you're not supposed to do this.
-It would also be dumb, since the server will disappear when SomeZone exits itself!
+NOTE: Currently zones don't always enforce these rules, but you're not supposed to do this.
+It would also be dumb, since the server will disappear when `SomeZone()` exits itself!
 
 ## The rules of engagement
 
 It is okay for a zone to temporarily enter an ancestor zone. It is not
-allowed to enter child zones, siblings etc. The rationale behind this is
-that when a zone is alive it's parent must also be alive. Other zones
+allowed to enter child zones, siblings, etc. The rationale behind this is
+that when a zone is alive its parent must also be alive. Other zones
 may exit unless they are aware that code will run inside them.
 
 ```js
@@ -455,10 +454,9 @@ Event listener | remove listener                          | remove listener, cal
 
 ## Zone.data
 
-zone.data is a magical property that can be used by users to associate
-arbitraty data with a zone. In a way you can think of it as the 'scope'
-of a zone. Properties that are not explicitly defined within the scope
-of a zone are inherited from the parent zone.
+zone.data is a magical property that that associates arbitraty data with a zone.
+In a way you can think of it as the 'scope' of a zone. Properties that are not explicitly
+defined within the scope of a zone are inherited from the parent zone.
 
   * In the root zone, `zone.data` equals the global object.
   * In any other zone, `zone.data` starts off as an empty object with the parent zone's `data` property as it's prototype.
@@ -514,7 +512,7 @@ The reason is that the zone library can't predict if and how often you are
 going to run a function inside a particular zone.
 
 For the cases where you need to do this anyway, the Gate construct was
-invented. By creating a gate you're allowing another zone (and all of it's
+invented. By creating a gate you're allowing another zone (and all of its
 descendant zones) to enter the current zone in the future. This means that the
 gate also prevents the zone from exiting.
 
@@ -733,4 +731,3 @@ Use the gate to execute a function in the context of the creator zone.
 See the equivalent Zone class methods.
 
 Gates don't offer the `...Unsafe` class of invocation methods.
-
