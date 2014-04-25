@@ -1,6 +1,9 @@
+# StrongLoop zone library
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+<!-- *generated with [DocToc](http://doctoc.herokuapp.com/)* -->
+**Table of Contents**  
 
 - [Overview](#overview)
   - [Disclaimer](#disclaimer)
@@ -58,7 +61,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Overview
+## Overview
 
 The StrongLoop Zone library addresses several issues in Node application development:
 
@@ -80,7 +83,7 @@ The StrongLoop Zone library addresses several issues in Node application develop
   * Sometimes you need to associate user data to an asynchronous flow.
     There is currently no way to do this.  
 
-## Disclaimer
+### Disclaimer
 
 This README is intended for developers interested
 in the rationale and internals of the zone library. It's rough but it specifies what we're building.
@@ -90,7 +93,7 @@ Currently many things in this document are unimplemented, or implemented differe
 
 The library is also heavily under development, so we're very open to informed criticism.
 
-# Using zones
+## Using zones
 
 To use zones, add the following as the very first line of your program:
 
@@ -105,7 +108,7 @@ are actually static methods of the `Zone` class, so they don't do anything
 with the currently active zone. After loading the zone library the
 program has entered the 'root' zone.
 
-## Creating a zone
+### Creating a zone
 
 There are a few different ways to create a zone. The canonical way to
 create a one-off zone is:
@@ -128,7 +131,7 @@ new Zone(function MyZone() {
 The zone constructor function is called synchronously.
 Of course zones can also be nested.
 
-## Ending a zone
+### Ending a zone
 
 Zones are like asynchronous functions. From the outside perspective,
 they can return a single value or "throw" a single error. There are a
@@ -179,7 +182,7 @@ new Zone(function MyZone() {
 });
 ```
 
-## Co-style generators
+### Co-style generators
 
 You can also obtain the result value of a zone by yielding it.
 (This is currently unimplemented)
@@ -207,7 +210,7 @@ new Zone(function* MyZone() {
 });
 ```
 
-### Zone vs try...catch
+#### Zone vs try...catch
 
 When using co-style generators, the ordinary `try..catch` statement becomes a
 lot more useful, and its purpose overlaps with that of zones. But there are
@@ -242,7 +245,7 @@ new Zone(function*() {
 ```
 
 
-## Exiting a zone
+### Exiting a zone
 
 There are a few ways to explicitly exit a zone:
 
@@ -272,7 +275,7 @@ new Zone(function StatZone() {
 });
 ```
 
-## Sharing resources between zones
+### Sharing resources between zones
 
 Within a zone you may use resources that are "owned" by ancestor zones. So this is okay:
 
@@ -305,7 +308,7 @@ server.on('connection', function() { ... });
 NOTE: Currently zones don't always enforce these rules, but you're not supposed to do this.
 It would also be dumb, since the server will disappear when `SomeZone()` exits itself!
 
-## The rules of engagement
+### The rules of engagement
 
 It is okay for a zone to temporarily enter an ancestor zone. It is not
 allowed to enter child zones, siblings, etc. The rationale behind this is
@@ -332,14 +335,14 @@ new Zone(function OuterZone() {
 
 To run code in a child zone use a Gate. See below.
 
-## Bookkeeping within a zone
+### Bookkeeping within a zone
 
 Resources and asynchronous operations register themselves with the parent zone. There are two reasons for this:
 
   * The zone needs to keep a reference count of callbacks that will or may happen in the future.
   * The asynchronous operation or resource can register a destructor that is called before the zone exits.
 
-## Reference counting
+### Reference counting
 
 The reference counting scheme is similar to the one libuv uses. However
 it is more complex because events don't necessarily originate from the
@@ -413,7 +416,7 @@ new Zone(function OuterZone() {
 });
 ```
 
-## The cleanup procedure
+### The cleanup procedure
 
 (This is currently not implemented correctly!)
 
@@ -452,7 +455,7 @@ timer.Interval | ?                                        | ?
 Zone           | set state to 'success' and start cleanup | set state to 'failed' and start cleanup
 Event listener | remove listener                          | remove listener, call the 'error' handler registered by the zone, or throw if there is none
 
-## Zone.data
+### Zone.data
 
 zone.data is a magical property that that associates arbitraty data with a zone.
 In a way you can think of it as the 'scope' of a zone. Properties that are not explicitly
@@ -462,7 +465,7 @@ defined within the scope of a zone are inherited from the parent zone.
   * In any other zone, `zone.data` starts off as an empty object with the parent zone's `data` property as it's prototype.
   * In other words, `zone.data.__proto__ === zone.parent.data`.
 
-## The curried constructor
+### The curried constructor
 
 Under some circumstances it may be desirable to create a function that is always wrapped within a zone.
 The obvious way to do this:
@@ -502,7 +505,7 @@ renderTemplate('bar', function(err, result) {
 });
 ```
 
-## Gates
+### Gates
 
 As explained earlier, it is not allowed to arbitrarily enter a zone from
 another zone, the only exception being that you can always enter one of your
@@ -518,7 +521,7 @@ gate also prevents the zone from exiting.
 
 (The Gate API isn't final.)
 
-## Gate example
+### Gate example
 The canonical way to create a gate:
 
 ```
@@ -542,7 +545,7 @@ new Zone(function OuterZone() {
 });
 ```
 
-## Gate constructor
+### Gate constructor
 
 The `Gate([fn], [gate]) constructor takes two optional arguments.
 
@@ -552,7 +555,7 @@ The `Gate([fn], [gate]) constructor takes two optional arguments.
     If this parameter is omitted the root zone is assumed, which means that all
     zones are allowed to use this gate.
 
-## The curried gate constructor
+### The curried gate constructor
 
 Just like the Zone() function, the Gate() function can be used as a curried
 constructor.
@@ -588,11 +591,11 @@ TODO: do we need to do something about that?
 
 # API reference
 
-### `zone`
+#### `zone`
 
 This global variable always contains a reference to the active zone.
 
-### `new Zone(bodyFn, [callback])`
+#### `new Zone(bodyFn, [callback])`
 
 Constructs a new zone.
 
@@ -600,20 +603,20 @@ Constructs a new zone.
 * `callback(err, result)` and optional error-first callback that will be run
   inside the parent zone after the zone has exited.
 
-### `zone.Zone(body)`
+#### `zone.Zone(body)`
 
 Returns a curried zone constructor.
 
-### `Zone#run(fn, [args...])`
-### `Zone#runUnsafe(fn, [args...])`
-### `Zone#runAsync(fn, [args])`
-### `Zone#call(thisObj, fn, [args...])`
-### `Zone#callUnsafe(thisObj, fn, [args...])`
-### `Zone#callAsync(thisObj, fn, arguments)`
-### `Zone#apply(thisObj, fn, arguments)`
-### `Zone#applyUnsafe(thisObj, fn, arguments)`
-### `Zone#applyAsync(thisObj, fn, arguments)`
-### `Zone#schedule(fn, [args...])`
+#### `Zone#run(fn, [args...])`
+#### `Zone#runUnsafe(fn, [args...])`
+#### `Zone#runAsync(fn, [args])`
+#### `Zone#call(thisObj, fn, [args...])`
+#### `Zone#callUnsafe(thisObj, fn, [args...])`
+#### `Zone#callAsync(thisObj, fn, arguments)`
+#### `Zone#apply(thisObj, fn, arguments)`
+#### `Zone#applyUnsafe(thisObj, fn, arguments)`
+#### `Zone#applyAsync(thisObj, fn, arguments)`
+#### `Zone#schedule(fn, [args...])`
 
 Synchronously call a function inside a zone. This function throws if the target
 zone is not an ancestor of the target zone.
@@ -643,11 +646,11 @@ These functions all do similar things.
 
   * `schedule` is an alias for `runAsync`.
 
-### `Zone#schedule(fn, [args...])`
+#### `Zone#schedule(fn, [args...])`
 
 This method is equivalent to `Zone#runAsync`.
 
-### `Zone#setCallback(fn)`
+#### `Zone#setCallback(fn)`
 
 Sets the exit callback for a zone.
 
@@ -656,7 +659,7 @@ Sets the exit callback for a zone.
 This function throws if a callback has already been specified.
 If the value of `fn` equals `null` or `undefined`, the function is a no-op.
 
-### `Zone#then(successCallback, [errorCallback])`
+#### `Zone#then(successCallback, [errorCallback])`
 
   * `successCallback`: a `function(result)` callback that is called with the zone result value as the argument (or `undefined` when the zone didn't return a value) after the zone has exited successfully.
   * `errorCallback`: a `function(err)` callback that is called with the first uncaught error that occured within the zone as the argument, after the zone has exited.
@@ -667,65 +670,65 @@ error callback, but an error or error-first callback has already been
 registered, this function throws. You may specify `null` or `undefined`
 for either function, in which case the particular callback is ignored.
 
-### `Zone#catch(errorCallback)`
+#### `Zone#catch(errorCallback)`
 
 Like `Zone#then`, but only registers the error callback.
 
-### `Zone#return([value])`
+#### `Zone#return([value])`
 
 Tell the zone to exit, optionally specifying a return value.
 If the `value` parameter is `undefined` no return value will be set, but the zone will start it's cleanup procedure.
 If a return value for the zone has already been set, this function throws.
 
-### `Zone#throw(error)`
+#### `Zone#throw(error)`
 
 Set the zone to a failed state and directs it to exit.
 This function returns normally.
 
-### `Zone#complete(err, [result])`
+#### `Zone#complete(err, [result])`
 
 Sets the zone to either failed or succeeded state.
 Optionally sets the result value.
 This function is always bound to the zone it completes.
 
-### `Zone#parent`
+#### `Zone#parent`
 
 A reference to the parent zone.
 
-### `Zone#root`
+#### `Zone#root`
 
 A reference to the root zone.
 
-### `Zone#data`
+#### `Zone#data`
 
 Every zone instance gets an unique `data` property which initially is
 an empty object. The prototype of this object is the `.data` property of
 the parent zone. In the global zone, `data` property refers to the
 global object.
 
-### `new Gate([fn], [ancestorZone])`
+#### `new Gate([fn], [ancestorZone])`
 
 Opens a gate that allows `ancestorZone` to make callbacks to the current zone.
 If a function is specified, the ancestor zone is temporarily entered, and `fn` is
 run inside it with `this` bound to the newly constructed gate. If the `fn` function
 throws, no Gate is constructed and the error is rethrown in the calling zone.
 
-### `Gate(fn, [ancestorZone])`
+#### `Gate(fn, [ancestorZone])`
 
 Returns a curried Gate constructor.
 
-### `Gate#close()`
+#### `Gate#close()`
 
 Closes the gate. After this the zone that created the Gate can exit again.
 No calls to `run`, `schedule` etc are allowed after closing a gate.
 
-### `Gate#run(fn, [args...])`
-### `Gate#runAsync(fn, [args...])`
-### `Gate#call(thisObj, fn, [args...])`
-### `Gate#callAsync(thisObj, fn, arguments)`
-### `Gate#apply(thisObj, fn, arguments)`
-### `Gate#applyAsync(thisObj, fn, arguments)`
-### `Gate#schedule(fn, [args...])`
+#### `Gate#run(fn, [args...])`
+#### `Gate#runAsync(fn, [args...])`
+#### `Gate#call(thisObj, fn, [args...])`
+#### `Gate#callAsync(thisObj, fn, arguments)`
+#### `Gate#apply(thisObj, fn, arguments)`
+#### `Gate#applyAsync(thisObj, fn, arguments)`
+#### `Gate#schedule(fn, [args...])`
 
 Use the gate to execute a function in the context of the creator zone.
 See the equivalent Zone class methods.
