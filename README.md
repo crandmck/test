@@ -2,7 +2,7 @@
 
 <!-- START doctoc generated TOC *generated with [DocToc](http://doctoc.herokuapp.com/)* -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  
+**Contents**  
 
 - [Overview](#overview)
   - [Disclaimer](#disclaimer)
