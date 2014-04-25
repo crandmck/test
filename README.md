@@ -1,24 +1,24 @@
 # StrongLoop zone library
 
-<!-- START doctoc generated TOC *generated with [DocToc](http://doctoc.herokuapp.com/)* -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**  
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [Overview](#overview)
   - [Disclaimer](#disclaimer)
 - [Using zones](#using-zones)
   - [Creating a zone](#creating-a-zone)
     - [The curried constructor](#the-curried-constructor)
-  - [Ending a zone](#ending-a-zone)
-  - [Co-style generators](#co-style-generators)
+  - [Obtaining the result of a zone](#obtaining-the-result-of-a-zone)
+    - [Co-style generators](#co-style-generators)
     - [Zone vs try...catch](#zone-vs-trycatch)
   - [Exiting a zone](#exiting-a-zone)
   - [Sharing resources between zones](#sharing-resources-between-zones)
   - [The rules of engagement](#the-rules-of-engagement)
+  - [Zone.data](#zonedata)
   - [Bookkeeping within a zone](#bookkeeping-within-a-zone)
   - [Reference counting](#reference-counting)
-  - [The cleanup procedure](#the-cleanup-procedure)
-  - [Zone.data](#zonedata)
+  - [Cleanup procedure](#cleanup-procedure)
 - [Gates](#gates)
   - [Gate example](#gate-example)
   - [Gate constructor](#gate-constructor)
@@ -62,7 +62,7 @@
 
 ## Overview
 
-The StrongLoop zone library addresses several issues in Node application development:
+The StrongLoop Zone library addresses several issues in Node application development:
 
   * Stack traces are useless when an asynchronous function fails.
 
@@ -169,12 +169,12 @@ renderTemplate('bar', function(err, result) {
 });
 ```
 
-### Ending a zone
+### Obtaining the result of a zone
 
 Zones are like asynchronous functions. From the outside perspective,
 they can return a single value or "throw" a single error. There are a
 couple of ways the outside zone may obtain the result of a zone. When a
-zone reports it's outcome two things are ensured:
+zone reports its outcome:
 
   * No more callbacks will run inside the zone.
   * All non-garbage-collectable resources have been cleaned up.
@@ -220,7 +220,7 @@ new Zone(function MyZone() {
 });
 ```
 
-### Co-style generators
+#### Co-style generators
 
 You can also obtain the result value of a zone by yielding it.
 (This is currently unimplemented)
@@ -372,6 +372,16 @@ new Zone(function OuterZone() {
 
 To run code in a child zone, use a [Gate](#gates).
 
+### Zone.data
+
+zone.data is a magical property that that associates arbitraty data with a zone.
+In a way you can think of it as the 'scope' of a zone. Properties that are not explicitly
+defined within the scope of a zone are inherited from the parent zone.
+
+  * In the root zone, `zone.data` equals the global object.
+  * In any other zone, `zone.data` starts off as an empty object with the parent zone's `data` property as it's prototype.
+  * In other words, `zone.data.__proto__ === zone.parent.data`.
+  
 ### Bookkeeping within a zone
 
 Resources and asynchronous operations register themselves with the parent zone. There are two reasons for this:
@@ -453,7 +463,7 @@ new Zone(function OuterZone() {
 });
 ```
 
-### The cleanup procedure
+### Cleanup procedure
 
 (This is currently not implemented correctly!)
 
@@ -491,16 +501,6 @@ net.Socket     | stop receiving, graceful close           | abortive close
 timer.Interval | ?                                        | ?
 Zone           | set state to 'success' and start cleanup | set state to 'failed' and start cleanup
 Event listener | remove listener                          | remove listener, call the 'error' handler registered by the zone, or throw if there is none
-
-### Zone.data
-
-zone.data is a magical property that that associates arbitraty data with a zone.
-In a way you can think of it as the 'scope' of a zone. Properties that are not explicitly
-defined within the scope of a zone are inherited from the parent zone.
-
-  * In the root zone, `zone.data` equals the global object.
-  * In any other zone, `zone.data` starts off as an empty object with the parent zone's `data` property as it's prototype.
-  * In other words, `zone.data.__proto__ === zone.parent.data`.
 
 ## Gates
 
