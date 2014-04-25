@@ -2,62 +2,61 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- *generated with [DocToc](http://doctoc.herokuapp.com/)* -->
-**Table of Contents**  
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [Overview](#overview)
-  - [Disclaimer](#disclaimer)
-- [Using zones](#using-zones)
-  - [Creating a zone](#creating-a-zone)
-  - [Ending a zone](#ending-a-zone)
-  - [Co-style generators](#co-style-generators)
-    - [Zone vs try...catch](#zone-vs-trycatch)
-  - [Exiting a zone](#exiting-a-zone)
-  - [Sharing resources between zones](#sharing-resources-between-zones)
-  - [The rules of engagement](#the-rules-of-engagement)
-  - [Bookkeeping within a zone](#bookkeeping-within-a-zone)
-  - [Reference counting](#reference-counting)
-  - [The cleanup procedure](#the-cleanup-procedure)
-  - [Zone.data](#zonedata)
-  - [The curried constructor](#the-curried-constructor)
+  - [Overview](#overview)
+    - [Disclaimer](#disclaimer)
+  - [Using zones](#using-zones)
+    - [Creating a zone](#creating-a-zone)
+      - [The curried constructor](#the-curried-constructor)
+    - [Ending a zone](#ending-a-zone)
+    - [Co-style generators](#co-style-generators)
+      - [Zone vs try...catch](#zone-vs-trycatch)
+    - [Exiting a zone](#exiting-a-zone)
+    - [Sharing resources between zones](#sharing-resources-between-zones)
+    - [The rules of engagement](#the-rules-of-engagement)
+    - [Bookkeeping within a zone](#bookkeeping-within-a-zone)
+    - [Reference counting](#reference-counting)
+    - [The cleanup procedure](#the-cleanup-procedure)
+    - [Zone.data](#zonedata)
   - [Gates](#gates)
-  - [Gate example](#gate-example)
-  - [Gate constructor](#gate-constructor)
-  - [The curried gate constructor](#the-curried-gate-constructor)
+    - [Gate example](#gate-example)
+    - [Gate constructor](#gate-constructor)
+    - [The curried gate constructor](#the-curried-gate-constructor)
 - [API reference](#api-reference)
-    - [`zone`](#zone)
-    - [`new Zone(bodyFn, [callback])`](#new-zonebodyfn-callback)
-    - [`zone.Zone(body)`](#zonezonebody)
-    - [`Zone#run(fn, [args...])`](#zone#runfn-args)
-    - [`Zone#runUnsafe(fn, [args...])`](#zone#rununsafefn-args)
-    - [`Zone#runAsync(fn, [args])`](#zone#runasyncfn-args)
-    - [`Zone#call(thisObj, fn, [args...])`](#zone#callthisobj-fn-args)
-    - [`Zone#callUnsafe(thisObj, fn, [args...])`](#zone#callunsafethisobj-fn-args)
-    - [`Zone#callAsync(thisObj, fn, arguments)`](#zone#callasyncthisobj-fn-arguments)
-    - [`Zone#apply(thisObj, fn, arguments)`](#zone#applythisobj-fn-arguments)
-    - [`Zone#applyUnsafe(thisObj, fn, arguments)`](#zone#applyunsafethisobj-fn-arguments)
-    - [`Zone#applyAsync(thisObj, fn, arguments)`](#zone#applyasyncthisobj-fn-arguments)
-    - [`Zone#schedule(fn, [args...])`](#zone#schedulefn-args)
-    - [`Zone#schedule(fn, [args...])`](#zone#schedulefn-args-1)
-    - [`Zone#setCallback(fn)`](#zone#setcallbackfn)
-    - [`Zone#then(successCallback, [errorCallback])`](#zone#thensuccesscallback-errorcallback)
-    - [`Zone#catch(errorCallback)`](#zone#catcherrorcallback)
-    - [`Zone#return([value])`](#zone#returnvalue)
-    - [`Zone#throw(error)`](#zone#throwerror)
-    - [`Zone#complete(err, [result])`](#zone#completeerr-result)
-    - [`Zone#parent`](#zone#parent)
-    - [`Zone#root`](#zone#root)
-    - [`Zone#data`](#zone#data)
-    - [`new Gate([fn], [ancestorZone])`](#new-gatefn-ancestorzone)
-    - [`Gate(fn, [ancestorZone])`](#gatefn-ancestorzone)
-    - [`Gate#close()`](#gate#close)
-    - [`Gate#run(fn, [args...])`](#gate#runfn-args)
-    - [`Gate#runAsync(fn, [args...])`](#gate#runasyncfn-args)
-    - [`Gate#call(thisObj, fn, [args...])`](#gate#callthisobj-fn-args)
-    - [`Gate#callAsync(thisObj, fn, arguments)`](#gate#callasyncthisobj-fn-arguments)
-    - [`Gate#apply(thisObj, fn, arguments)`](#gate#applythisobj-fn-arguments)
-    - [`Gate#applyAsync(thisObj, fn, arguments)`](#gate#applyasyncthisobj-fn-arguments)
-    - [`Gate#schedule(fn, [args...])`](#gate#schedulefn-args)
+      - [`zone`](#zone)
+      - [`new Zone(bodyFn, [callback])`](#new-zonebodyfn-callback)
+      - [`zone.Zone(body)`](#zonezonebody)
+      - [`Zone#run(fn, [args...])`](#zone#runfn-args)
+      - [`Zone#runUnsafe(fn, [args...])`](#zone#rununsafefn-args)
+      - [`Zone#runAsync(fn, [args])`](#zone#runasyncfn-args)
+      - [`Zone#call(thisObj, fn, [args...])`](#zone#callthisobj-fn-args)
+      - [`Zone#callUnsafe(thisObj, fn, [args...])`](#zone#callunsafethisobj-fn-args)
+      - [`Zone#callAsync(thisObj, fn, arguments)`](#zone#callasyncthisobj-fn-arguments)
+      - [`Zone#apply(thisObj, fn, arguments)`](#zone#applythisobj-fn-arguments)
+      - [`Zone#applyUnsafe(thisObj, fn, arguments)`](#zone#applyunsafethisobj-fn-arguments)
+      - [`Zone#applyAsync(thisObj, fn, arguments)`](#zone#applyasyncthisobj-fn-arguments)
+      - [`Zone#schedule(fn, [args...])`](#zone#schedulefn-args)
+      - [`Zone#schedule(fn, [args...])`](#zone#schedulefn-args-1)
+      - [`Zone#setCallback(fn)`](#zone#setcallbackfn)
+      - [`Zone#then(successCallback, [errorCallback])`](#zone#thensuccesscallback-errorcallback)
+      - [`Zone#catch(errorCallback)`](#zone#catcherrorcallback)
+      - [`Zone#return([value])`](#zone#returnvalue)
+      - [`Zone#throw(error)`](#zone#throwerror)
+      - [`Zone#complete(err, [result])`](#zone#completeerr-result)
+      - [`Zone#parent`](#zone#parent)
+      - [`Zone#root`](#zone#root)
+      - [`Zone#data`](#zone#data)
+      - [`new Gate([fn], [ancestorZone])`](#new-gatefn-ancestorzone)
+      - [`Gate(fn, [ancestorZone])`](#gatefn-ancestorzone)
+      - [`Gate#close()`](#gate#close)
+      - [`Gate#run(fn, [args...])`](#gate#runfn-args)
+      - [`Gate#runAsync(fn, [args...])`](#gate#runasyncfn-args)
+      - [`Gate#call(thisObj, fn, [args...])`](#gate#callthisobj-fn-args)
+      - [`Gate#callAsync(thisObj, fn, arguments)`](#gate#callasyncthisobj-fn-arguments)
+      - [`Gate#apply(thisObj, fn, arguments)`](#gate#applythisobj-fn-arguments)
+      - [`Gate#applyAsync(thisObj, fn, arguments)`](#gate#applyasyncthisobj-fn-arguments)
+      - [`Gate#schedule(fn, [args...])`](#gate#schedulefn-args)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -130,6 +129,45 @@ new Zone(function MyZone() {
 
 The zone constructor function is called synchronously.
 Of course zones can also be nested.
+
+#### The curried constructor
+
+Under some circumstances it may be desirable to create a function that is always wrapped within a zone.
+The obvious way to do this:
+
+```js
+function renderTemplate(fileName, cb) {
+  new Zone(function() {
+    // Asynchronous unicorns and something with fileName.
+    ...
+  }).setCallback(cb);
+}
+```
+
+To make this a little less verbose the "curried constructor" makes it possible to call `zone.Zone`
+without the `new` keyword.  Doing so creates a new zone constructor that is
+pre-seeded with a body. Arguments passed to the constructor are
+forwarded to the body function. Example:
+
+
+```js
+var renderTemplate = Zone(function(fileName, cb) {
+  zone.setCallback(cb);
+  // Rainbow.
+  ...
+});
+```
+
+Now you can use this zone template as follows:
+
+```js
+renderTemplate('bar', function(err, result) {
+  if (err)
+    throw err;
+  // Do something with the result
+  ...
+});
+```
 
 ### Ending a zone
 
@@ -243,7 +281,6 @@ new Zone(function*() {
   //   opened before invoking the catch handler.
 });
 ```
-
 
 ### Exiting a zone
 
@@ -465,47 +502,7 @@ defined within the scope of a zone are inherited from the parent zone.
   * In any other zone, `zone.data` starts off as an empty object with the parent zone's `data` property as it's prototype.
   * In other words, `zone.data.__proto__ === zone.parent.data`.
 
-### The curried constructor
-
-Under some circumstances it may be desirable to create a function that is always wrapped within a zone.
-The obvious way to do this:
-
-```js
-function renderTemplate(fileName, cb) {
-  new Zone(function() {
-    // Asynchronous unicorns and something with fileName.
-    ...
-  }).setCallback(cb);
-}
-```
-
-To make this a little less verbose we've added the 'curried
-constructor' concept. It is possible to call `zone.Zone` without the
-`new` keyword. When you do so a new zone constructor is created which is
-pre-seeded with a body. Arguments passed to the constructor are
-forwarded to the body function. Example:
-
-
-```js
-var renderTemplate = Zone(function(fileName, cb) {
-  zone.setCallback(cb);
-  // Rainbow.
-  ...
-});
-```
-
-Now you can use this zone template as follows:
-
-```js
-renderTemplate('bar', function(err, result) {
-  if (err)
-    throw err;
-  // Do something with the result
-  ...
-});
-```
-
-### Gates
+## Gates
 
 As explained earlier, it is not allowed to arbitrarily enter a zone from
 another zone, the only exception being that you can always enter one of your
