@@ -1,8 +1,8 @@
 # StrongLoop zone library
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- START doctoc generated TOC *generated with [DocToc](http://doctoc.herokuapp.com/)* -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**  
 
 - [Overview](#overview)
   - [Disclaimer](#disclaimer)
@@ -370,7 +370,7 @@ new Zone(function OuterZone() {
 });
 ```
 
-To run code in a child zone use a Gate. See below.
+To run code in a child zone, use a [Gate](#gates).
 
 ### Bookkeeping within a zone
 
@@ -505,21 +505,19 @@ defined within the scope of a zone are inherited from the parent zone.
 ## Gates
 
 As explained earlier, it is not allowed to arbitrarily enter a zone from
-another zone, the only exception being that you can always enter one of your
-ancestor zones.
+another zone; the only exception being that you can always enter an ancestor zones.
 
 The reason is that the zone library can't predict if and how often you are
 going to run a function inside a particular zone.
 
-For the cases where you need to do this anyway, the Gate construct was
-invented. By creating a gate you're allowing another zone (and all of its
-descendant zones) to enter the current zone in the future. This means that the
+For the cases where you need to do this anyway, use a _gate_. By creating a gate you're allowing another
+zone (and all of its descendant zones) to enter the current zone in the future. This means that the
 gate also prevents the zone from exiting.
 
-(The Gate API isn't final.)
+**NOTE: The Gate API isn't final.**
 
 ### Gate example
-The canonical way to create a gate:
+The canonical way to create a gate is, for example:
 
 ```
 require('zone');
@@ -544,7 +542,7 @@ new Zone(function OuterZone() {
 
 ### Gate constructor
 
-The `Gate([fn], [gate]) constructor takes two optional arguments.
+The `Gate([fn], [gate])` constructor takes two optional arguments.
 
   * `fn` is a function that is synchronously run inside the ancestor zone.
     Within this function, `this` refers to the gate object.
@@ -554,19 +552,14 @@ The `Gate([fn], [gate]) constructor takes two optional arguments.
 
 ### The curried gate constructor
 
-Just like the Zone() function, the Gate() function can be used as a curried
-constructor.
-
-Here's an example to demonstrate how to use it.
+Just like the `Zone()` function, you can use the `Gate()` function as a curried constructor.
+In the following example, assume that `noZoneSetTimeout(callback, msec)` is a function that doesn't
+support zones, so the callback is always run in the root zone.
+Now we want to wrap it and make it run the callback in the zone that called `setTimeout()`.
 
 ```js
-// Assume that noZoneSetTimeout(callback, msec) is a function that doesn't
-// support zones, so the callback is always run in the root zone.
-// Now we want to wrap it and make it run the callback in the zone that
-// called setTimeout.
-
 global.setTimeout = Gate(function(callback, msec) {
-  // When we get here, a gate fromthe root zone to the caller zone has been
+  // When we get here, a gate from the root zone to the caller zone has been
   // opened.
   var self = this;
 
@@ -581,7 +574,7 @@ global.setTimeout = Gate(function(callback, msec) {
 });
 ```
 
-Note that in the above example, the `global.setTimeOut` function actually
+In the above example, the `global.setTimeOut` function actually
 returns the gate created, because it's really a constructor.
 
 TODO: do we need to do something about that?
