@@ -62,7 +62,7 @@
 
 ## Overview
 
-The StrongLoop Zone library addresses several issues in Node application development:
+The StrongLoop zone library addresses several issues in Node application development:
 
   * Stack traces are useless when an asynchronous function fails.
 
