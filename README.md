@@ -1,7 +1,3 @@
-This is some markdown.
-
-<div class="foobar">Inside a div tag </div>.
-
 Now is the time for all good men etc. 
 LoopBack is an open source Node.js framework 
 built on top of Express 
