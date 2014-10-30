@@ -60,6 +60,7 @@ Otherwise, follow the steps below to create the application from scratch.
 
     **NOTE**: Custom REST endpoints in LoopBack are known as [remote methods](http://docs.strongloop.com/display/LB/Defining+remote+methods).
 
+
 4. **Create the model relations.**
 
     Run `slc loopback:relation` and create the following relations:
@@ -131,8 +132,8 @@ Otherwise, follow the steps below to create the application from scratch.
       credentials are invalid
     - Sets the `GET /logout` route to log the user out
 
-    >When you log in sucessfully, `projects.html` is rendered with the
-    >authenticated user's access token embedded into each link.
+    **NOTE**: When you log in sucessfully, `projects.html` is rendered with the
+    authenticated user's access token embedded into each link.
 
 8. **Create the views.**
 
@@ -142,7 +143,7 @@ Otherwise, follow the steps below to create the application from scratch.
     - Copy [`index.html`](/server/views/index.html) into `server/views`.
     - Copy [`projects.html`](/server/views/projects.html) into `server/views`.
 
-    >We will go over the details of these two files in a later step.
+    We will go over the details of these two files in a later step.
 
 9. **Create role resolver**
 
