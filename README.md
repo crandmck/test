@@ -103,21 +103,21 @@ Otherwise, follow the steps below to create the application from scratch.
       - From the project root, run `npm install --save body-parser`
       - Modify `server/server.js` to look like:
 
-```js
-...
-// -- Add your pre-processing middleware here --
-var bodyparser = require('body-parser');
-app.use(bodyparser.urlencoded({ extended: true }));
-...
-// -- Mount static files here--
-...
-var path = require('path');
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-app.engine('html', require('ejs').renderFile);
-app.set('json spaces', 2); //pretty print json responses
-...
-```
+    ```js
+    ...
+    // -- Add your pre-processing middleware here --
+    var bodyparser = require('body-parser');
+    app.use(bodyparser.urlencoded({ extended: true }));
+    ...
+    // -- Mount static files here--
+    ...
+    var path = require('path');
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'html');
+    app.engine('html', require('ejs').renderFile);
+    app.set('json spaces', 2); //pretty print json responses
+    ...
+    ```
 
 7. **Add routes.**
 
