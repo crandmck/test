@@ -57,6 +57,7 @@ Otherwise, follow the steps below to create the application from scratch.
     `common/models/user.json` from `PersistedModel` to `User`. Then copy
     [`project.js`](/common/models/project.js) to `common/models/project.js` to
     add custom REST endpoints to the app.
+    
     **NOTE**: Custom REST endpoints in LoopBack are known as [remote methods](http://docs.strongloop.com/display/LB/Defining+remote+methods). <br/>
 
 4. **Create the model relations.**
@@ -158,19 +159,19 @@ Otherwise, follow the steps below to create the application from scratch.
     for the `project` model:
 
     **Deny access to all project REST endpoints**
-      - Select the model to apply the ACL entry to: **All existing models**
-      - Select the ACL scope: **All methods and properties**
-      - Select the access type: **All (match all types)**
-      - Select the role: **All users**
-      - Select the permission to apply: **Explicitly deny access**
+    - Select the model to apply the ACL entry to: **All existing models**
+    - Select the ACL scope: **All methods and properties**
+    - Select the access type: **All (match all types)**
+    - Select the role: **All users**
+    - Select the permission to apply: **Explicitly deny access**
 
     **Allow unrestricted access to `GET /api/projects/listProjects`**
-      - Select the model to apply the ACL entry to: **project**
-      - Select the ACL scope: **A single method**
-      - Enter the method name: **listProjects**
-      - Select the access type: **Execute**
-      - Select the role: **All users**
-      - Select the permission to apply: **Explicitly grant access**
+    - Select the model to apply the ACL entry to: **project**
+    - Select the ACL scope: **A single method**
+    - Enter the method name: **listProjects**
+    - Select the access type: **Execute**
+    - Select the role: **All users**
+    - Select the permission to apply: **Explicitly grant access**
 
     - Only allow admin unrestricted access to `GET /api/projects`
       - Select the model to apply the ACL entry to: **project**
