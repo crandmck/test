@@ -58,8 +58,7 @@ Otherwise, follow the steps below to create the application from scratch.
     [`project.js`](/common/models/project.js) to `common/models/project.js` to
     add custom REST endpoints to the app.
 
-    **NOTE**: Custom REST endpoints in LoopBack are known as [remote methods](http://docs.strongloop.com/display/LB/Defining+remote+methods).
-
+    **NOTE**: Custom REST endpoints in LoopBack are known as [remote methods](http://docs.strongloop.com/display/LB/Defining+remote+methods). <br/>
 
 4. **Create the model relations.**
 
@@ -159,14 +158,14 @@ Otherwise, follow the steps below to create the application from scratch.
     root, run `slc loopback:acl` and create each of the following ACL entries
     for the `project` model:
 
-    - Deny access to all project REST endpoints
+    **Deny access to all project REST endpoints**
       - Select the model to apply the ACL entry to: **All existing models**
       - Select the ACL scope: **All methods and properties**
       - Select the access type: **All (match all types)**
       - Select the role: **All users**
       - Select the permission to apply: **Explicitly deny access**
 
-    - Allow unrestricted access to `GET /api/projects/listProjects`
+    **Allow unrestricted access to `GET /api/projects/listProjects`**
       - Select the model to apply the ACL entry to: **project**
       - Select the ACL scope: **A single method**
       - Enter the method name: **listProjects**
