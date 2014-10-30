@@ -57,7 +57,6 @@ Otherwise, follow the steps below to create the application from scratch.
     `common/models/user.json` from `PersistedModel` to `User`. Then copy
     [`project.js`](/common/models/project.js) to `common/models/project.js` to
     add custom REST endpoints to the app.
-
     **NOTE**: Custom REST endpoints in LoopBack are known as [remote methods](http://docs.strongloop.com/display/LB/Defining+remote+methods). <br/>
 
 4. **Create the model relations.**
