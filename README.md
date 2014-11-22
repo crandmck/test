@@ -1,4 +1,4 @@
-
+Most recent changes to LoopBack.
 
 2014-11-19, Version 2.8.0
 =========================
