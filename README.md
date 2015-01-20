@@ -1,5 +1,5 @@
 Test 
-<div class="foobar" style="font-color: red; font-weight: bold;">  TEST TEST TEST</div>
+<div class="foobar" style="font-color: red; font-weight: bold;">  Content inside styled div </div>
 sadfasdf
 <br/>
 | First Header  | Second Header |
