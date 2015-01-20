@@ -1,8 +1,9 @@
 ##Test 
 
-<table>
+<table border="0">
 <tr><td>
-![StrongLoop Labs](http://docs.strongloop.com/download/thumbnails/5310165/StrongLoop%20Labs%20Logo%20Cropped.png "StrongLoop Labs")
+<img src="http://docs.strongloop.com/download/thumbnails/5310165/StrongLoop%20Labs%20Logo%20Cropped.png" 
+alt="StrongLoop Labs"></img>
 </td>
 <td>
 StrongLoop Labs projects provide early access to advanced or experimental functionality.  In general, these projects may lack usability, completeness, documentation, and robustness, and may be outdated.
