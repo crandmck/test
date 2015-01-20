@@ -1,10 +1,15 @@
 ##Test 
 
+<table>
+<tr><td>
 ![StrongLoop Labs](http://docs.strongloop.com/download/thumbnails/5310165/StrongLoop%20Labs%20Logo%20Cropped.png "StrongLoop Labs")
+</td>
+<td>
+StrongLoop Labs projects provide early access to advanced or experimental functionality.  In general, these projects may lack usability, completeness, documentation, and robustness, and may be outdated.
+However, StrongLoop supports these projects: Paying customers can open issues using the StrongLoop customer support system (Zendesk), and community users can report bugs on GitHub.
+</td></tr>
+</table>
 
-<div class="foobar" style="font-color: red; font-weight: bold;">  Content inside styled div </div>
-sadfasdf
-<br/>
 | First Header  | Second Header |
 | ------------- | ------------- |
 | Row1 Cell1    | Row1 Cell2    |
