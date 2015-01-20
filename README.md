@@ -1,4 +1,7 @@
-Test 
+##Test 
+
+![StrongLoop Labs](http://docs.strongloop.com/download/thumbnails/5310165/StrongLoop%20Labs%20Logo%20Cropped.png "StrongLoop Labs")
+
 <div class="foobar" style="font-color: red; font-weight: bold;">  Content inside styled div </div>
 sadfasdf
 <br/>
