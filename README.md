@@ -7,8 +7,7 @@ However, StrongLoop supports these projects: Paying customers can open issues us
 
 | First Header  | Second Header |
 | ------------- | ------------- |
-| Lorem ipsum Lorem ipsum   Lorem ipsum Lorem ipsum   Lorem ipsum Lorem ipsum   Lorem ipsum Lorem ipsum   
-Lorem ipsum Lorem ipsum   Lorem ipsum Lorem ipsum   Lorem ipsum Lorem ipsum   Lorem ipsum Lorem ipsum    | Row1 Cell2    |
+| Built on top of the open source LoopBack framework, StrongLoop allows you to visually develop REST APIs in Node and get them connected to your data. StrongLoop also features built-in mBaaS features like push and offline sync, plus graphical tools for clustering, profiling and monitoring Node apps.   | Row1 Cell2    |
 | Row2 Cell1    | Row2 Cell2    |
 | Row3 Cell1    | Row3 Cell2    |
 | Row4 Cell1    | Row4 Cell2    |
