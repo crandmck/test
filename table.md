@@ -19,7 +19,7 @@ The following table describes filter types.
 
 <table>
 <thead><tr>
-<th>Filter type</th>
+<th width="200">Filter type</th>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
