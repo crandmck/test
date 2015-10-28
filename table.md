@@ -1,4 +1,5 @@
-- [Overview](#overview)
+This document is the central organizational point for LoopBack examples, which are divided into the following broad categories:
+
 - [Tutorials](#tutorials)
 - [Topic-specific examples](#topic-specific-examples)
 - [Connector examples](#connector-examples)
@@ -74,13 +75,13 @@ The following examples may be completed in any order.
 <td>
 <a href="https://github.com/strongloop/loopback-component-push/tree/master/example/server-2.0">loopback-component-push</a></td>
 <td>Example of using <a href="https://docs.strongloop.com/display/LB/Push+notifications">LoopBack Push Component</a>.
-NOTE: Example is in the <code>example/serve-2.0</code> directory.</td>
+<br/>NOTE: Example is in the <code>example/serve-2.0</code> directory.</td>
 </tr>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-component-storage/tree/master/example-2.0">loopback-component-storage</a></td>
 <td>Example of using <a href="https://docs.strongloop.com/display/LB/Storage+component">LoopBack storage component</a>.
-NOTE: Example is in the <code>example-2.0</code> directory.</td>
+<br/>NOTE: Example is in the <code>example-2.0</code> directory.</td>
 </tr>
 <tr>
 <td>
@@ -147,7 +148,7 @@ NOTE: Example is in the <code>example-2.0</code> directory.</td>
 
 ## Connector examples
 
-These examples illustrate use of non-database connectors (see [loopback-example-database](https://github.com/strongloop/loopback-example-database) for use of database connectors.
+These examples illustrate use of non-database connectors (see [loopback-example-database](https://github.com/strongloop/loopback-example-database) for example using database connectors).
 
 <table><thead>
 <tr>
@@ -163,13 +164,24 @@ These examples illustrate use of non-database connectors (see [loopback-example-
 <td><a href="https://github.com/strongloop/loopback-example-remote">loopback-example-remote</a></td>
 <td>Basic use of the remote connector.</td>
 </tr>
+
 <tr>
 <td><a href="https://github.com/strongloop/loopback-example-email">loopback-example-email</a></td>
 <td>Sending email from a LoopBack app using the email connector.</td>
 </tr>
+
+<tr>
+<td>
+<a href="https://github.com/strongloop/loopback-connector-soap/tree/master/example">loopback-connector-soap</a></td>
+<td>Example of SOAP connector.
+<br/>NOTE: The example app is in the <code>example</code> directory.</td>
+</tr>
+
 </tbody></table>
 
 ## Client SDK examples
+
+These examples illustrate using LoopBack's [client SDKs](https://docs.strongloop.com/display/LB/Client+SDKs).
 
 <table><thead>
 <tr>
@@ -187,7 +199,7 @@ These examples illustrate use of non-database connectors (see [loopback-example-
 </td></tr>
 <tr><td>
 <a href="https://github.com/strongloop/loopback-example-angular">loopback-example-angular</a></td>
-<td>A simple "to do" list using AngularJS on the client and LoopBack on the server.</td>
+<td>Example using AngularJS client.</td>
 </tr>
 <tr><td>
 <a href="https://github.com/strongloop/loopback-example-isomorphic">loopback-example-isomorphic</a></td>
