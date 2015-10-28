@@ -101,7 +101,7 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-offline-sync">loopback-example-offline-sync</a></td>
-<td>Offline sync with Loopback.</td>
+<td><a href="https://docs.strongloop.com/display/LB/Synchronization">Offline synchronization</a> with Loopback.</td>
 </tr>
 <tr>
 <td>
@@ -116,12 +116,12 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-embedded-relations">loopback-example-embedded-relations</a></td>
-<td>Using embedded model relations.</td>
+<td>Using <a href="https://docs.strongloop.com/display/LB/Embedded+models+and+relations">embedded model relations</a>.</td>
 </tr>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-file-storage">loopback-example-file-storage</a></td>
-<td>Storing and retrieving files using loopback-component-storage.</td>
+<td>Storing and retrieving files using <a href="https://docs.strongloop.com/display/LB/Storage+component">LoopBack storage component</a>, loopback-component-storage.</td>
 </tr>
 
 <tr>
@@ -132,7 +132,7 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-operation-hooks">loopback-example-operation-hooks</a></td>
-<td>Using operation hooks.</td>
+<td>Example of using <a href="https://docs.strongloop.com/display/LB/Operation+hooks">operation hooks</a>.</td>
 
 <tr>
 <td>
