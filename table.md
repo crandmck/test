@@ -1,19 +1,19 @@
 <table><thead>
 <tr>
 <th align="center">Order</th>
-<th align="left" width="300">Name</th>
+<th align="left" width="320">Name</th>
 <th align="left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td align="center">1</td>
 <td align="left"><a href="https://github.com/strongloop/loopback-getting-started">loopback-getting-started</a></td>
-<td align="left">The basics of LoopBack. Follow along in <a href="http://docs.strongloop.com/display/LB/Getting+started+with+LoopBack">Getting started with LoopBack</a> to build the example.</td>
+<td align="left">The basics of LoopBack. Follow along in <a href="http://docs.strongloop.com/display/LB/Getting+started+with+LoopBack">Getting started with LoopBack</a> to understand it.</td>
 </tr>
 <tr>
 <td align="center">2</td>
 <td align="left"><a href="https://github.com/strongloop/loopback-getting-started-intermediate">loopback-getting-started-intermediate</a></td>
-<td align="left">Full-stack example that builds on <code>loopback-getting-started</code> to demonstrate intermediate level features of LoopBack. Follow instructions in <a href="http://docs.strongloop.com/display/LB/Getting+started+part+II">Getting started part II</a> to build the example.</td>
+<td align="left">Full-stack example that builds on <code>loopback-getting-started</code>. Follow instructions in <a href="http://docs.strongloop.com/display/LB/Getting+started+part+II">Getting started part II</a> to understand it.</td>
 </tr>
 <tr>
 <td align="center">3</td>
