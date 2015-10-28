@@ -1,8 +1,8 @@
 - [Overview](#overview)
 - [Tutorials](#tutorials)
-- [General examples](#general-examples)
 - [Topic-specific examples](#topic-specific-examples)
 - [Connector examples](#connector-examples)
+- [Client SDK examples](#client-sdk-examples)
 
 ## Tutorials
 
@@ -55,26 +55,6 @@ In general, these tutorials are intended to be followed in order.
 </tr>
 </tbody></table>
 
-## General examples
-
-<table><thead>
-<tr>
-<th width="300">Name</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>
-<a href="https://github.com/strongloop/loopback-example-app">loopback-example-app</a></td>
-<td>A full-stack LoopBack application (iCars).</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/strongloop/strong-gateway-demo">strong-gateway-demo</a></td>
-<td>OAuth2 with StrongLoop API Gateway.</td>
-</tr>
-</tbody></table>
-
 ## Topic-specific examples
 
 The following examples may be completed in any order.
@@ -99,9 +79,14 @@ NOTE: Example is in the <code>example/serve-2.0</code> directory.</td>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-component-storage/tree/master/example-2.0">loopback-component-storage</a></td>
-<td>NOTE: Example is in the <code>example-2.0</code> directory.</td>
+<td>Example of using <a href="https://docs.strongloop.com/display/LB/Storage+component">LoopBack storage component</a>.
+NOTE: Example is in the <code>example-2.0</code> directory.</td>
 </tr>
-
+<tr>
+<td>
+<a href="https://github.com/strongloop/loopback-example-app">loopback-example-app</a></td>
+<td>A full-stack LoopBack application (iCars).</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-mixins">loopback-example-mixins</a></td>
@@ -152,6 +137,11 @@ NOTE: Example is in the <code>example/serve-2.0</code> directory.</td>
 <td>
 <a href="https://github.com/strongloop/loopback-example-user-management">loopback-example-user-management</a></td>
 <td>How to register, log in / log out, and verify users; how to reset a user's password.</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/strongloop/strong-gateway-demo">strong-gateway-demo</a></td>
+<td>OAuth2 with StrongLoop API Gateway.</td>
 </tr>
 </tbody></table>
 
