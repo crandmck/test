@@ -61,7 +61,7 @@ The following examples may be completed in any order.
 
 <table><thead>
 <tr>
-<th width="300">Name</th>
+<th width="320">Name</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
