@@ -58,7 +58,7 @@ In general, these tutorials are intended to be followed in order.
 
 ## Topic-specific examples
 
-The following examples may be completed in any order.
+These examples illustrate specific LoopBack features.  
 
 <table><thead>
 <tr>
@@ -69,7 +69,7 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/angular-live-set-example">angular-live-set-example</a></td>
-<td>LoopBack/AngularJS app using HTML5 server-sent events.</td>
+<td>LoopBack/AngularJS app using HTML5 <a href="https://docs.strongloop.com/display/LB/Realtime+server-sent+events">realtime server-sent events</a>.</td>
 </tr>
 <tr>
 <td>
@@ -91,12 +91,12 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-mixins">loopback-example-mixins</a></td>
-<td>Loading mixins, observing changes, and adding model attributes.</td>
+<td>Loading <a href="https://docs.strongloop.com/display/LB/Defining+mixins">mixins</a>; observing changes and adding model attributes.</td>
 </tr>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-pubsub">loopback-example-pubsub</a></td>
-<td>Example using strong-pubsub.</td>
+<td>Example using <a href="https://docs.strongloop.com/display/MSG/Pub-sub">StrongLoop publish-subscribe messaging</a>, strong-pubsub.</td>
 </tr>
 <tr>
 <td>
@@ -129,10 +129,12 @@ The following examples may be completed in any order.
 <a href="https://github.com/strongloop/loopback-example-middleware">loopback-example-middleware</a></td>
 <td>Using middleware.</td>
 </tr>
+
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-operation-hooks">loopback-example-operation-hooks</a></td>
 <td>Example of using <a href="https://docs.strongloop.com/display/LB/Operation+hooks">operation hooks</a>.</td>
+</tr>
 
 <tr>
 <td>
@@ -142,7 +144,7 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/strong-gateway-demo">strong-gateway-demo</a></td>
-<td>OAuth2 with StrongLoop API Gateway.</td>
+<td>OAuth2 with <a href="https://docs.strongloop.com/display/LGW">StrongLoop API Gateway</a>.</td>
 </tr>
 </tbody></table>
 
