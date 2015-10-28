@@ -21,7 +21,7 @@ In general, these tutorials are intended to be followed in order.
 <td align="center">1</td>
 <td align="left">
 <a href="https://github.com/strongloop/loopback-getting-started">loopback-getting-started</a></td>
-<td align="left">**START HERE** to learn the basics of LoopBack. Follow <a href="http://docs.strongloop.com/display/LB/Getting+started+with+LoopBack">Getting started with LoopBack</a> to understand it.</td>
+<td align="left"><b>START HERE</b> to learn the basics of LoopBack. Follow <a href="http://docs.strongloop.com/display/LB/Getting+started+with+LoopBack">Getting started with LoopBack</a> to understand it.</td>
 </tr>
 <tr>
 <td align="center">2</td>
