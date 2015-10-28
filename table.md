@@ -1,15 +1,7 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-    <title><!-- Insert your title here --></title>
-</head>
-<body>
-
 <table><thead>
 <tr>
 <th align="center">Order</th>
-<th align="left" width="200">Name</th>
+<th align="left" width="300">Name</th>
 <th align="left">Description</th>
 </tr>
 </thead><tbody>
@@ -51,7 +43,7 @@
 
 <table><thead>
 <tr>
-<th align="left" width="200">Name</th>
+<th align="left" width="300">Name</th>
 <th align="left">Description</th>
 </tr>
 </thead><tbody>
