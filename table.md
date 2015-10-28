@@ -149,5 +149,54 @@
 </tr>
 </tbody></table>
 
-</body>
-</html>
+## Connector examples
+
+<table><thead>
+<tr>
+<th width="300">Name </th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-example-rest-connector">loopback-example-rest-connector</a></td>
+<td>Basic use of REST connector.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-example-remote">loopback-example-remote</a></td>
+<td>Basic use of the remote connector.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-example-email">loopback-example-email</a></td>
+<td>Sending email from a LoopBack app using the email connector.</td>
+</tr>
+</tbody></table>
+
+## Client SDK examples
+
+<table><thead>
+<tr>
+<th width="300">Name </th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-android-getting-started">loopback-android-getting-started</a></td>
+<td>How to use the LoopBack Android SDK</td>
+</tr>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-ios-getting-started">loopback-ios-getting-started</a></td>
+<td>How to use the LoopBack iOS SDK</td>
+</tr>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-example-angular">loopback-example-angular</a></td>
+<td>A simple "to do" list using AngularJS on the client and LoopBack on the server.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-example-isomorphic">loopback-example-isomorphic</a></td>
+<td>Using the LoopBack API on both client and server.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/strongloop/loopback-example-xamarin">loopback-example-xamarin</a></td>
+<td>Using Xamarin SDK</td>
+</tr>
+</tbody></table>
