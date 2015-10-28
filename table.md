@@ -6,7 +6,7 @@
 
 ## Tutorials
 
-Tutorials provide step-by-step instructions to create an example app that illustrates one or more
+Each tutorial provides step-by-step instructions to create an example app that illustrates one or more
 core LoopBack features.
 In general, these tutorials are intended to be followed in order.
 
@@ -57,7 +57,7 @@ In general, these tutorials are intended to be followed in order.
 
 ## Topic-specific examples
 
-<p>The following examples may be completed in any order.</p>
+The following examples may be completed in any order.
 
 <table><thead>
 <tr>
@@ -85,11 +85,6 @@ In general, these tutorials are intended to be followed in order.
 <td align="left">
 <a href="https://github.com/strongloop/loopback-example-app">loopback-example-app</a></td>
 <td align="left">A full-stack LoopBack application (iCars).</td>
-</tr>
-<tr>
-<td align="left">
-<a href="https://github.com/strongloop/loopback-example-email">loopback-example-email</a></td>
-<td align="left">Sending email from a LoopBack app using the email connector.</td>
 </tr>
 
 <tr>
@@ -157,6 +152,8 @@ In general, these tutorials are intended to be followed in order.
 </tbody></table>
 
 ## Connector examples
+
+These examples illustrate use of non-database connectors (see [loopback-example-database](https://github.com/strongloop/loopback-example-database) for use of database connectors.
 
 <table><thead>
 <tr>
