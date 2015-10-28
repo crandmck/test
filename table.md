@@ -95,7 +95,7 @@ In general, these tutorials are intended to be followed in order.
 <tr>
 <td align="left">
 <a href="https://github.com/strongloop/loopback-example-mixins">loopback-example-mixins</a></td>
-<td align="left">Loading mixins from  directories and modules and performing different actions like observing changes and adding model attributes.</td>
+<td align="left">Loading mixins, observing changes, and adding model attributes.</td>
 </tr>
 <tr>
 <td align="left">
