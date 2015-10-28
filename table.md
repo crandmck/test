@@ -55,6 +55,26 @@ In general, these tutorials are intended to be followed in order.
 </tr>
 </tbody></table>
 
+## General examples
+
+<table><thead>
+<tr>
+<th width="300">Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>
+<a href="https://github.com/strongloop/loopback-example-app">loopback-example-app</a></td>
+<td>A full-stack LoopBack application (iCars).</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/strongloop/strong-gateway-demo">strong-gateway-demo</a></td>
+<td>OAuth2 with StrongLoop API Gateway.</td>
+</tr>
+</tbody></table>
+
 ## Topic-specific examples
 
 The following examples may be completed in any order.
@@ -68,23 +88,18 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/angular-live-set-example">angular-live-set-example</a></td>
-<td>Example of realtime LoopBack/AngularJS app using HTML5 server-sent events.</td>
+<td>LoopBack/AngularJS app using HTML5 server-sent events.</td>
 </tr>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-component-push/tree/master/example/server-2.0">loopback-component-push</a></td>
-<td>LoopBack 2.x examples are in the <code>example/serve-2.0</code> directory.</td>
+<td>Example of using <a href="https://docs.strongloop.com/display/LB/Push+notifications">LoopBack Push Component</a>.
+NOTE: Example is in the <code>example/serve-2.0</code> directory.</td>
 </tr>
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-component-storage/tree/master/example-2.0">loopback-component-storage</a></td>
-<td>LoopBack 2.0 examples are in the <code>example-2.0</code> directory.</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://github.com/strongloop/loopback-example-app">loopback-example-app</a></td>
-<td>A full-stack LoopBack application (iCars).</td>
+<td>NOTE: Example is in the <code>example-2.0</code> directory.</td>
 </tr>
 
 <tr>
@@ -105,7 +120,7 @@ The following examples may be completed in any order.
 <tr>
 <td>
 <a href="https://github.com/strongloop/loopback-example-passport">loopback-example-passport</a></td>
-<td>PassportJS with Loopback.</td>
+<td>Example of using the <a href="https://docs.strongloop.com/pages/viewpage.action?pageId=3836277">Third-party login (Passport) component</a>.</td>
 </tr>
 <tr>
 <td>
@@ -137,17 +152,6 @@ The following examples may be completed in any order.
 <td>
 <a href="https://github.com/strongloop/loopback-example-user-management">loopback-example-user-management</a></td>
 <td>How to register, log in / log out, and verify users; how to reset a user's password.</td>
-</tr>
-
-<tr>
-<td>
-<a href="http://docs.strongloop.com/display/LB/Tutorial:+Push+notifications">Push notifications</a></td>
-<td>Doc tutorial for push notifications.</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/strongloop/strong-gateway-demo">strong-gateway-demo</a></td>
-<td>OAuth2 with StrongLoop API Gateway.</td>
 </tr>
 </tbody></table>
 
