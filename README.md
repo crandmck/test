@@ -19,3 +19,5 @@ This is a StrongLoop Labs project
 It provides early access to advanced or experimental functionality. It may lack usability, completeness, documentation, and robustness, and may be outdated.
 However, StrongLoop supports this project: Paying customers can open issues using the StrongLoop customer support system (Zendesk). Community users, please report bugs on GitHub.
 </p>
+
+[Link](table.md)
