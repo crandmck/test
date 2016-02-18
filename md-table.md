@@ -15,7 +15,6 @@ the options object, `path` must be an absolute path to the file.
 
 The following table provides details on the `options` parameter.
 
-<div class="table-scroller" markdown="1">
 
 | Property        | Description                                     | Default     | Availability |
 |-----------------|-------------------------------------------------|-------------|--------------|
@@ -25,7 +24,6 @@ The following table provides details on the `options` parameter.
 | `headers`       | Object containing HTTP headers to serve with the file.|  |  |
 | `dotfiles`      | Option for serving dotfiles. Possible values are "allow", "deny", "ignore".| "ignore" | &nbsp; |
 
-</div>
 
 The method invokes the callback function `fn(err)` when the transfer is complete
 or when an error occurs. If the callback function is specified and an error occurs,
