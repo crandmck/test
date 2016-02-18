@@ -6,7 +6,7 @@
 <h3 id='res.sendFile'>res.sendFile(path [, options] [, fn])</h3>
 
 <div class="doc-box doc-info" markdown="1">
-`res.sendFile()` is supported by Express v4.8.0 onwards
+<code>res.sendFile()</code> is supported by Express v4.8.0 onwards
 </div>
 
 Transfers the file at the given `path`. Sets the `Content-Type` response HTTP header field
