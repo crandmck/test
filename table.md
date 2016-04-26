@@ -1,5 +1,5 @@
 
-| Data source | Connection-string property | Format | Notes
+| Data source | Property | Connection String Format | Notes
 | ----------- | --------------------- | ---------------- | ------------- |
 | DB2 | `dsn` | `DATABASE=<database>;HOSTNAME=<host>;PORT=<port>;PROTOCOL=TCPIP;UID=<uid>;PWD=<pwd>` | |
 | Cloudant| `url` | `https://<username>:<password>@<host>` | `url` does not override the field `database`. You still must  provide it. |
